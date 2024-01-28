@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#tsparticles.darkmode {
+  position: absolute;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background:#0d6657;
+  background: -webkit-linear-gradient(-30deg, #3b0c68 0%, #0d6657 100%);
+  background: linear-gradient(-30deg, #3b0c68 0%, #0d6657  100%);
+  z-index: -1
+}
+
+#tsparticles.lightmode {
+  position: absolute;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background:#14e2c0;
+  background: -webkit-linear-gradient(-30deg, #db0d63 0%, #14e2c0 100%);
+  background: linear-gradient(-30deg, #db0d63 0%, #14e2c0 100%);
+  z-index: -1
+}
+
+.shadowed-lightmode {
+  margin-top: 4%;
+  color: rgba(224, 224, 224, 0.801);
+  font-size: 2.4em;
+  font-family: sans-serif;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 rgb(184, 184, 184), 1px 2px 0 rgb(184, 184, 184), 1px 3px 0 rgb(184, 184, 184), 1px 4px 0 rgb(184, 184, 184),
+    1px 5px 0 rgb(184, 184, 184), 1px 6px 0 rgb(184, 184, 184), 1px 7px 0 rgb(184, 184, 184), 1px 8px 0 rgb(184, 184, 184),
+    5px 13px 15px black;
+}
+
+.shadowed-lightmode:hover {
+  transition: 0.3s;
+  transform: scale(1.02)translate(-1%, -1%);
+  text-shadow: 1px -1px 0 rgb(184, 184, 184), 1px -2px 0 rgb(184, 184, 184), 1px -3px 0 rgb(184, 184, 184),
+    1px -4px 0 rgb(184, 184, 184), 1px -5px 0 rgb(184, 184, 184), 1px -6px 0 rgb(184, 184, 184), 1px -7px 0 rgb(184, 184, 184),
+    1px -8px 0 rgb(184, 184, 184), 5px -13px 15px black, 5px -13px 25px rgb(184, 184, 184);
+  cursor: default;
+}
+
+.shadowed-darkmode {
+  margin-top: 4%;
+  color: white;
+  font-size: 2.4em;
+  font-family: sans-serif;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 rgb(179, 179, 179), 1px 2px 0 rgb(179, 179, 179), 1px 3px 0 rgb(179, 179, 179), 1px 4px 0 rgb(179, 179, 179),
+    1px 5px 0 rgb(179, 179, 179), 1px 6px 0 rgb(179, 179, 179), 1px 7px 0 rgb(179, 179, 179), 1px 8px 0 rgb(179, 179, 179),
+    5px 13px 15px rgb(134, 134, 134);
+}
+
+.shadowed-darkmode:hover {
+  transition: 0.3s;
+  transform: scale(1.02)translate(-1%, -1%);
+  text-shadow: 1px -1px 0 rgb(179, 179, 179), 1px -2px 0 rgb(179, 179, 179), 1px -3px 0 rgb(179, 179, 179),
+    1px -4px 0 rgb(179, 179, 179), 1px -5px 0 rgb(179, 179, 179), 1px -6px 0 rgb(179, 179, 179), 1px -7px 0 rgb(179, 179, 179),
+    1px -8px 0 rgb(179, 179, 179), 5px -13px 15px rgb(58, 58, 58), 5px -13px 25px #a1a1a1;
+  cursor: default;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    margin: 10%;
+  }
+  #tsparticles.lightmode {
+    height: 200vh;
+  }
+  #tsparticles.darkmode {
+    height: 200vh;
+  }
+  #about {
+    margin-top: 20vh
+  }
+}
+
+.cardImg {
+  width: 300px;
+  height: 200px;
+}
+
+#resume{
+  height: 100vh;
+  width: 100vw;
+  margin-top: 5%
+}
+
+.slow-transition {
+  transition: 100s;
+}
