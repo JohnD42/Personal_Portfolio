@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../store/appContext.jsx'
 import { Modal } from 'flowbite'
+import axios from 'axios'
 
 const ContactForm = (props) => {
 
@@ -11,16 +12,15 @@ const ContactForm = (props) => {
         const formData = new FormData(e.target)
         const email = formData.get('email')
         const message = formData.get('message')
-        const resp = await fetch(import.meta.env.VITE_BACKEND_URL +'/contact', {
-            method: 'POST',
+        const config = {
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                'email': email,
-                'message': message
-            })
-        })
+            }
+        }
+        const resp = await axios.post(import.meta.env.VITE_BACKEND_URL +'/contact', {
+            'email': email,
+            'message': message
+        }, config)
         if(resp.status === 200) {
             const targetEl = document.getElementById('contactModal')
             const modal = new Modal(targetEl)
@@ -30,7 +30,7 @@ const ContactForm = (props) => {
 
     return (
         <div className="w-full flex flex-col items-center justify-center mb-16" id='contact'>
-            <form className={`${ store.darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md rounded px-8 pt-6 pb-8 mb-4`} onSubmit={handleContactFormSubmit }>
+            <form className={`${ store.darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md rounded px-8 pt-6 pb-8 mb-4`} method="post" onSubmit={handleContactFormSubmit}>
                 <div className="mb-4">
                     <label className={`block ${ store.darkMode ? 'text-gray-300' : 'text-gray-700'} text-sm font-bold mb-2`} htmlFor="email">
                         Email
