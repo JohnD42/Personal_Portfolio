@@ -12,6 +12,7 @@ const ContactForm = (props) => {
         const formData = new FormData(e.target)
         const email = formData.get('email')
         const message = formData.get('message')
+        e.target.reset()
         const config = {
             headers: {
                 'Content-Type': 'application/json'
@@ -54,7 +55,7 @@ const ContactForm = (props) => {
                     <div className={`relative rounded-lg ${store.darkMode ? 'bg-slate-600' : 'bg-slate-100' }`}>
                         <div className="flex items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600">
                             <h3 className={`text-xl font-semibold ${store.darkMode ? 'text-neutral-50' : 'text-neutral-800'}`}>
-                                Message sent! Click outside the modal to close it.
+                                Thanks for contacting me! Click outside the modal to close it.
                             </h3>
                         </div>
                     </div>
