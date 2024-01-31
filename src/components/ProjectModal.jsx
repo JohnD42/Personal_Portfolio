@@ -13,8 +13,8 @@ const ProjectModal = (props) => {
 
     const clickModalXHandler = () => {
         console.log(projectHeader.split(' ').join('-'))
-        // const modal = document.getElementById(projectHeader.split(' ').join('-'))
-        // modal.classList.add('hidden')
+        const modal = document.getElementById(projectHeader.split(' ').join('-'))
+        modal.classList.add('hidden')
     }
 
 return (
